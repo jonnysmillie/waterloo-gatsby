@@ -6,6 +6,7 @@ path: "/markdown/"
 category: Typography
 image: ./bg.jpg
 authors: wlfnmn
+stars: 4
 tags:
   - Markdown
   - Emoji

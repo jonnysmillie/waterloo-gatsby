@@ -7,6 +7,7 @@ image: ./dunkirk.jpg
 description: "Dunkirk serves up emotionally satisfying spectacle, delivered by a writer-director in full command of his craft and brought to life by a gifted ensemble cast that honors the fact-based story."
 category: Reviews
 authors: wlfnmn
+stars: 1
 tags:
 - Film
 - Christopher Nolan

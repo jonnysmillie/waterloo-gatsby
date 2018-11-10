@@ -52,6 +52,8 @@ export const pageQuery = graphql`
             layout
             title
             path
+            authors
+            stars
             category
             tags
             description

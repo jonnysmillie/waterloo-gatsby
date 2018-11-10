@@ -36,7 +36,7 @@ const NavLinks = () =>
     <NavSeparator />
     <NavLink to="stories">Stories</NavLink>
     <NavSeparator />
-    <NavLink to="profile">Profile</NavLink>
+    <NavLink to="what">What is?</NavLink>
     <NavSeparator />
     <NavLink to="another">Another</NavLink>
   </Wrapper>

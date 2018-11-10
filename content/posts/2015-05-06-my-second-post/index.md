@@ -6,6 +6,7 @@ path: "/my-second-post/"
 category: Stories
 image: ./bg.jpg
 authors: wlfnmn
+stars: 3
 description: "Civil society; save lives pathway to a better life public-private partnerships solution, tackle, protect UNHCR social movement Jane Addams sustainable campaign respond equality."
 ---
 

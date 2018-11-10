@@ -3,37 +3,37 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import React from 'react'
 
 import {
-  faApple,
-  faAws,
-  faFacebook,
-  faGithub,
-  faHtml5,
-  faJs,
-  faNode,
-  faPhp,
-  faReact,
-  faTwitter,
-  faVuejs,
-} from '@fortawesome/free-brands-svg-icons'
+  faAd,
+  faAddressBook,
+  faBook,
+  faFilm,
+  faTheaterMasks,
+  faMusic,
+  faPen,
+  faScroll,
+  faKeyboard,
+  faShareSquare,
+  faImages,
+} from '@fortawesome/free-solid-svg-icons'
 import './style.scss'
 
 library.add(
-  faApple,
-  faAws,
-  faFacebook,
-  faGithub,
-  faHtml5,
-  faJs,
-  faNode,
-  faPhp,
-  faReact,
-  faTwitter,
-  faVuejs
+  faAd,
+  faAddressBook,
+  faBook,
+  faFilm,
+  faTheaterMasks,
+  faMusic,
+  faPen,
+  faScroll,
+  faKeyboard,
+  faShareSquare,
+  faImages,
 )
 
 const Icon = ({ name }) => (
   <div className="icon" title={name}>
-    <FontAwesomeIcon icon={['fab', name]} />
+    <FontAwesomeIcon icon={['fas', name]} />
   </div>
 )
 

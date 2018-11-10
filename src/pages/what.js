@@ -8,7 +8,7 @@ import Layout from 'components/Layout'
 import Meta from 'components/Meta'
 import Icon from 'components/Icon'
 
-class Profile extends React.Component {
+class What extends React.Component {
   render() {
     const { location, data } = this.props
     const profile = get(data, 'profile.childImageSharp.fixed')
@@ -19,13 +19,14 @@ class Profile extends React.Component {
 
     return (
       <Layout location={location}>
-        <Meta site={siteMetadata} title="Profile" />
+        <Meta site={siteMetadata} title="What" />
         <div>
+        <h1 className="text-center p-1 underhead">What is Waterloo Review?</h1>
           <section className="text-center">
             <div className="container">
               <Img fixed={profile} className="rounded-circle" />
-              <h1>jaxx2104</h1>
-              <p className="lead text-muted">Front-end engineer.</p>
+              <h1>Waterloo Review</h1>
+              <p className="lead text-muted">A website of original reviews and stories.</p>
               <div>
                 <a
                   ref="twButton"
@@ -33,7 +34,7 @@ class Profile extends React.Component {
                   className="twitter-follow-button"
                   data-show-count="false"
                 >
-                  Follow @jaxx2104
+                  Follow us on Twitter
                 </a>
               </div>
             </div>
@@ -43,7 +44,7 @@ class Profile extends React.Component {
             <div className="container">
               <div className="row">
                 <div className="col-lg-12">
-                  <h2 className="section-heading">SKILL</h2>
+                  <h2 className="section-heading">Reviews</h2>
                   <hr className="border-white" />
                 </div>
               </div>
@@ -51,30 +52,20 @@ class Profile extends React.Component {
             <div className="container">
               <div className="row justify-content-md-center">
                 <div className="col-lg-3 col-6">
-                  <Icon title="HTML" name="html5" />
+                  <Icon title="Books" name="book" />
+                  <p>Books</p>
                 </div>
                 <div className="col-lg-3 col-6">
-                  <Icon title="JavaScript" name="js" />
+                  <Icon title="Films" name="film" />
+                  <p>Films</p>
                 </div>
                 <div className="col-lg-3 col-6">
-                  <Icon title="React.js" name="react" />
+                  <Icon title="Theater" name="theater-masks" />
+                  <p>Theater</p>
                 </div>
                 <div className="col-lg-3 col-6">
-                  <Icon title="Vue.js" name="vuejs" />
-                </div>
-              </div>
-              <div className="row justify-content-md-center">
-                <div className="col-lg-3 col-6">
-                  <Icon title="Node.js" name="node" />
-                </div>
-                <div className="col-lg-3 col-6 ">
-                  <Icon title="PHP" name="php" />
-                </div>
-                <div className="col-lg-3 col-6 ">
-                  <Icon title="AWS" name="aws" />
-                </div>
-                <div className="col-lg-3 col-6 ">
-                  <Icon title="Swift" name="apple" />
+                  <Icon title="Music" name="music" />
+                  <p>Music</p>
                 </div>
               </div>
             </div>
@@ -85,15 +76,13 @@ class Profile extends React.Component {
             <div className="container">
               <div className="row cover-over">
                 <div className="col-md-12 text-left">
-                  <h2 className="section-heading">Features</h2>
+                  <h2 className="section-heading"></h2>
                   <p>
-                    I'm a front-end engineer in Japan 🗼
+                    
                     <br />
-                    Used to be a designer of furniture and architecture.
+                    
                     <br />
                   </p>
-                  <li>2013 ~ 2017: J-CAST News</li>
-                  <li>2017 ~ : Recruit Lifestyle</li>
                 </div>
               </div>
             </div>
@@ -106,20 +95,28 @@ class Profile extends React.Component {
             <div className="container">
               <div className="row">
                 <div className="col-lg-12">
-                  <h2 className="section-heading">WORKS</h2>
+                  <h2 className="section-heading">Stories</h2>
                   <hr className="border-white" />
                 </div>
               </div>
             </div>
             <div className="container">
-              <div className="row">
-                <div className="col-md-6 slide-left" data-emergence="hidden">
-                  <Img sizes={work1} />
-                  <p>Yomu</p>
+              <div className="row justify-content-md-center">
+                <div className="col-lg-3 col-6">
+                  <Icon title="Writing" name="pen" />
+                  <p>Writing</p>
                 </div>
-                <div className="col-md-6 slide-right" data-emergence="hidden">
-                  <Img sizes={work2} />
-                  <p>Detector</p>
+                <div className="col-lg-3 col-6">
+                  <Icon title="Scroll" name="scroll" />
+                  <p>Blogs</p>
+                </div>
+                <div className="col-lg-3 col-6">
+                  <Icon title="Keyboard" name="keyboard" />
+                  <p>Digital Stories</p>
+                </div>
+                <div className="col-lg-3 col-6">
+                  <Icon title="Original Artwork" name="images" />
+                  <p>Original Artwork</p>
                 </div>
               </div>
             </div>
@@ -129,10 +126,17 @@ class Profile extends React.Component {
             <div className="container">
               <div className="row align-items-center">
                 <div className="col-md-12 text-left">
-                  <h2 className="section-heading">Repositories</h2>
+                  <h2 className="section-heading">Submit a review</h2>
                   <p>
-                    リポジトリは
-                    <a href="https://github.com/jaxx2104/">こちら</a>
+                    To submit a review please make sure the following:
+                    <ul>
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                    <li>5</li>
+                    <li>6</li>
+                    </ul>
                   </p>
                 </div>
               </div>
@@ -143,12 +147,17 @@ class Profile extends React.Component {
             <div className="container">
               <div className="row cover-over">
                 <div className="col-md-12 text-left">
-                  <h2 className="section-heading">Degree Works</h2>
+                  <h2 className="section-heading">Submit a Story</h2>
                   <p>
-                    過去の制作は
-                    <a className="text-white" href="https://old.jaxx2104.info/">
-                      こちら
-                    </a>
+                    To submit a story, please adhere to the following guidelines:
+                    <ul>
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                    <li>5</li>
+                    <li>6</li>
+                    </ul>
                   </p>
                 </div>
               </div>
@@ -160,7 +169,7 @@ class Profile extends React.Component {
   }
 }
 
-export default Profile
+export default What
 
 export const query = graphql`
   query ProfilePageQuery {

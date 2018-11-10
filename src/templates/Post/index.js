@@ -13,6 +13,8 @@ const Post = ({ data, options }) => {
     category,
     tags,
     description,
+    authors,
+    stars,
     title,
     path,
     date,
@@ -33,14 +35,22 @@ const Post = ({ data, options }) => {
             ''
           )}
         <div className="info">
-          
-            <h1>{title}</h1>
-            <time dateTime={date}>{date}</time>
-          
+          <h1>{title}</h1>
+          <time dateTime={date}>{date}</time>    
           {Badges({ items: [category], primary: true })}
           {Badges({ items: tags })}
+          {Badges({ items: [authors], secondary: true })}
+          <div className="stars">
+        {stars == 1 ? (<span className="fa fa-star"></span>) : ('')}
+        {stars == 2 ? (<p><span className="fa fa-star"></span><span className="fa fa-star"></span></p>) : ('')}
+        {stars == 3 ? (<p><span className="fa fa-star"></span><span className="fa fa-star"></span><span className="fa fa-star"></span></p>) : ('')}
+        {stars == 4 ? (<p><span className="fa fa-star"></span><span className="fa fa-star"></span><span className="fa fa-star"></span><span className="fa fa-star"></span></p>) : ('')}
+        {stars == 5 ? (<p><span className="fa fa-star"></span><span className="fa fa-star"></span><span className="fa fa-star"></span><span className="fa fa-star"></span><span className="fa fa-star"></span></p>) : ('')}
+        </div>
         </div>
         </Link>
+
+
         <div className="content">
           
           
