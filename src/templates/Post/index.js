@@ -24,10 +24,11 @@ const Post = ({ data, options }) => {
   const html = get(data, 'html')
   const isMore = isIndex && !!html.match('<!--more-->')
   const fixed = get(image, 'childImageSharp.fixed')
-
   return (
+    <div>
     <div className="article" key={path}>
       <div className="container">
+      
       <Link style={{ boxShadow: 'none' }} to={path}>
       {fixed ? (
             <Img fixed={fixed} style={{ display: 'block', margin: '0 auto', width: '100%' }} />
@@ -67,6 +68,7 @@ const Post = ({ data, options }) => {
       <hr/>
       </div>
       
+    </div>
     </div>
   )
 }

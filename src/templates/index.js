@@ -16,6 +16,8 @@ const Template = ({ data, location }) => (
         site={get(data, 'site.meta')}
       />
       {get(data, 'post.frontmatter.layout') != 'page' ? (
+        <div>
+        <h1 className="text-center p-1 underhead">{get(data, 'post.frontmatter.title')}</h1>
         <Post
           data={get(data, 'post')}
           options={{
@@ -23,6 +25,7 @@ const Template = ({ data, location }) => (
             adsense: get(data, 'site.meta.adsense'),
           }}
         />
+        </div>
       ) : (
         <Page {...this.props} />
       )}
@@ -51,6 +54,7 @@ export const pageQuery = graphql`
         title
         path
         category
+        stars
         tags
         description
         date(formatString: "YYYY/MM/DD")
