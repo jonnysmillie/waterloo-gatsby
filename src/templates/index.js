@@ -55,6 +55,7 @@ export const pageQuery = graphql`
         path
         category
         stars
+        authors
         tags
         description
         date(formatString: "YYYY/MM/DD")
