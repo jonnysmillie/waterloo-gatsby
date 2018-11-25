@@ -1,3 +1,7 @@
+import { paginate } from 'gatsby-awesome-pagination';
+
+
+
 const each = require('lodash/each')
 const Promise = require('bluebird')
 const path = require('path')
@@ -57,6 +61,7 @@ exports.createPages = ({ graphql, actions }) => {
             component: PageTemplate,
           })
         })
+        
       })
     )
   })

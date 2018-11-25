@@ -30,7 +30,7 @@ class What extends React.Component {
               <div>
                 <a
                   ref="twButton"
-                  href="https://twitter.com/jaxx2104"
+                  href="https://twitter.com/wlfnmn"
                   className="twitter-follow-button"
                   data-show-count="false"
                 >
