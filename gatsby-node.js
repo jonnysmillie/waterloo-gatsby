@@ -1,8 +1,5 @@
-import { paginate } from 'gatsby-awesome-pagination';
-
-
-
 const each = require('lodash/each')
+const _ = require('lodash')
 const Promise = require('bluebird')
 const path = require('path')
 const PostTemplate = path.resolve('./src/templates/index.js')
@@ -61,7 +58,23 @@ exports.createPages = ({ graphql, actions }) => {
             component: PageTemplate,
           })
         })
-        
+
+        // Create blog post list pages
+        const postsPerPage = 2
+        const numPages = Math.ceil(posts.length / postsPerPage)
+
+        _.times(numPages, i => {
+          createPage({
+            path: i === 0 ? `/blog/` : `/${i + 1}`,
+            component: path.resolve('./src/templates/blog-list.js'),
+            context: {
+              limit: postsPerPage,
+              skip: i * postsPerPage,
+              numPages,
+              currentPage: i + 1,
+            },
+          })
+        })
       })
     )
   })
