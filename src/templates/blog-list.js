@@ -3,7 +3,10 @@ import { Link, graphql } from 'gatsby'
 import get from 'lodash/get'
 import Helmet from 'react-helmet'
 
-import Layout from '../components/layout'
+import Post from 'templates/Post'
+import Meta from 'components/Meta'
+import Layout from 'components/Layout'
+import Page from 'templates/Page'
 
 class BlogIndex extends React.Component {
   render() {
@@ -20,18 +23,15 @@ class BlogIndex extends React.Component {
     const nextPage = (currentPage + 1).toString()
 
     return (
-      <Layout location={this.props.location}>
-        <Helmet
-          htmlAttributes={{ lang: 'en' }}
-          meta={[{ name: 'description', content: siteDescription }]}
-          title={siteTitle}
-        />
+      <Layout location={location}>
+        <Meta title={siteTitle} site={siteDescription} />
 
         {posts.map(({ node }) => {
           const title = get(node, 'frontmatter.title') || node.frontmatter.path
+          const stars = get(node, 'frontmatter.stars') || node.frontmatter.stars
           return (
             <div key={node.frontmatter.path}>
-              <h3
+              <h1
                 style={{
                   marginBottom: 20,
                 }}
@@ -39,7 +39,8 @@ class BlogIndex extends React.Component {
                 <Link style={{ boxShadow: 'none' }} to={node.frontmatter.path}>
                   {title}
                 </Link>
-              </h3>
+              </h1>
+              <p>{stars}</p>
               <small>{node.frontmatter.date}</small>
               <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
             </div>
@@ -98,6 +99,10 @@ export const pageQuery = graphql`
       siteMetadata {
         title
         description
+        url: siteUrl
+        author
+        twitter
+        adsense
       }
     }
     allMarkdownRemark(
@@ -109,9 +114,22 @@ export const pageQuery = graphql`
         node {
           excerpt
           frontmatter {
-            date(formatString: "DD MMMM, YYYY")
+            layout
             title
             path
+            category
+            stars
+            authors
+            tags
+            description
+            date(formatString: "YYYY/MM/DD")
+            image {
+              childImageSharp {
+                fixed(width: 500) {
+                  ...GatsbyImageSharpFixed_withWebp
+                }
+              }
+            }
           }
         }
       }
