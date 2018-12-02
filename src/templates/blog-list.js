@@ -7,6 +7,7 @@ import Post from 'templates/Post'
 import Meta from 'components/Meta'
 import Layout from 'components/Layout'
 import Page from 'templates/Page'
+import Img from 'gatsby-image'
 
 class BlogIndex extends React.Component {
   render() {
@@ -29,6 +30,9 @@ class BlogIndex extends React.Component {
         {posts.map(({ node }) => {
           const title = get(node, 'frontmatter.title') || node.frontmatter.path
           const stars = get(node, 'frontmatter.stars') || node.frontmatter.stars
+          const fixed =
+            get(node, 'frontmatter.image.childImageSharp.fixed') ||
+            node.frontmatter.image.childImageSharp.fixed
           return (
             <div key={node.frontmatter.path}>
               <h1
@@ -37,6 +41,18 @@ class BlogIndex extends React.Component {
                 }}
               >
                 <Link style={{ boxShadow: 'none' }} to={node.frontmatter.path}>
+                  {fixed ? (
+                    <Img
+                      fixed={fixed}
+                      style={{
+                        display: 'block',
+                        margin: '0 auto',
+                        width: '100%',
+                      }}
+                    />
+                  ) : (
+                    ''
+                  )}
                   {title}
                 </Link>
               </h1>
