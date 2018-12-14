@@ -1,17 +1,18 @@
 ---
-title: "Dunkirk"
-date: "2016-03-01T22:12:03.284Z"
+title: 'Dunkirk'
+date: '2016-03-01T22:12:03.284Z'
 layout: post
-path: "/dunkirk/"
+path: '/dunkirk/'
 image: ./dunkirk.jpg
-description: "Dunkirk serves up emotionally satisfying spectacle, delivered by a writer-director in full command of his craft and brought to life by a gifted ensemble cast that honors the fact-based story."
+description: 'Dunkirk serves up emotionally satisfying spectacle, delivered by a writer-director in full command of his craft and brought to life by a gifted ensemble cast that honors the fact-based story.'
 category: Reviews
 authors: wlfnmn
-stars: 1
+stars: 2
 tags:
-- Film
-- Christopher Nolan
+  - Film
+  - Christopher Nolan
 ---
+
 <!--more-->
 
 The outline of Christopher Nolan’s “Dunkirk” is a clever twist on a familiar trilogy: land, sea, and air. Nolan parses a week of combat during the Second World War, from May 26 through June 4, 1940, and the effort to rescue British and French troops into those three components, and gives each a time frame (a week, a day, an hour, respectively) that corresponds to its speed. The movie thus leaps about in time, with each thread of action moving ahead fitfully, until the three threads unite in the movie’s evident conclusion, the successful retreat of more than three hundred thousand soldiers (about two-thirds of them British, one-third French) across the English Channel from Dunkirk, France, to Great Britain. (The movie is centered on British soldiers; the French are a brief but melodramatic afterthought.) The preservation of this fighting force was, of course, crucial for the preservation of Great Britain and the eventual outcome of the war; the retreat was the defeat that helped to secure victory.
