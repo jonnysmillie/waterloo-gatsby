@@ -29,7 +29,8 @@ class BlogIndex extends React.Component {
         <Meta title={siteTitle} site={siteDescription} />
         <h1 className="text-center p-1 underhead">All posts</h1>
         {posts.map(({ node }) => {
-          const title = get(node, 'frontmatter.title') || node.frontmatter.path
+          const title = get(node, 'frontmatter.title') || node.frontmatter.title
+          const path = get(node, 'frontmatter.path') || node.frontmatter.path
           const stars = get(node, 'frontmatter.stars') || node.frontmatter.stars
           const date = get(node, 'frontmatter.date') || node.frontmatter.date
           const category =
@@ -53,6 +54,17 @@ class BlogIndex extends React.Component {
                 </span>
               )
             })
+          const Button = ({ path, label, primary }) => (
+            <Link className="readmore" to={path}>
+              <span
+                className={`btn btn-outline-primary btn-block ${
+                  primary ? 'btn-outline-primary' : 'btn-outline-secondary'
+                }`}
+              >
+                {label}
+              </span>
+            </Link>
+          )
           return (
             <div className="article" key={node.frontmatter.path}>
               <div className="container">
@@ -119,6 +131,8 @@ class BlogIndex extends React.Component {
                   </div>
                 </Link>
                 <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
+                {Button({ path, label: 'READ MORE', primary: true })}
+                <hr />
               </div>
             </div>
           )
@@ -151,7 +165,7 @@ class BlogIndex extends React.Component {
                   style={{
                     textDecoration: 'none',
                     color: i + 1 === currentPage ? '#ffffff' : '',
-                    background: i + 1 === currentPage ? '#007acc' : '',
+                    background: i + 1 === currentPage ? '#000000' : '',
                   }}
                 >
                   {i + 1}
