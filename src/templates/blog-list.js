@@ -25,7 +25,7 @@ class BlogIndex extends React.Component {
     const nextPage = (currentPage + 1).toString()
 
     return (
-      <Layout location={location}>
+      <Layout>
         <Meta title={siteTitle} site={siteDescription} />
         <h1 className="text-center p-1 underhead">All posts</h1>
         {posts.map(({ node }) => {

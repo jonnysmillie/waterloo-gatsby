@@ -21,12 +21,16 @@ class What extends React.Component {
       <Layout location={location}>
         <Meta site={siteMetadata} title="What" />
         <div>
-        <h1 className="text-center p-1 underhead">What is Waterloo Review?</h1>
+          <h1 className="text-center p-1 underhead">
+            What is Waterloo Review?
+          </h1>
           <section className="text-center">
             <div className="container">
               <Img fixed={profile} className="rounded-circle" />
               <h1>Waterloo Review</h1>
-              <p className="lead text-muted">A website of original reviews and stories.</p>
+              <p className="lead text-muted">
+                A website of original reviews and stories.
+              </p>
               <div>
                 <a
                   ref="twButton"
@@ -76,11 +80,10 @@ class What extends React.Component {
             <div className="container">
               <div className="row cover-over">
                 <div className="col-md-12 text-left">
-                  <h2 className="section-heading"></h2>
+                  <h2 className="section-heading" />
                   <p>
-                    
                     <br />
-                    
+
                     <br />
                   </p>
                 </div>
@@ -127,17 +130,15 @@ class What extends React.Component {
               <div className="row align-items-center">
                 <div className="col-md-12 text-left">
                   <h2 className="section-heading">Submit a review</h2>
-                  <p>
-                    To submit a review please make sure the following:
-                    <ul>
+                  <p>To submit a review please make sure the following:</p>
+                  <ul>
                     <li>1</li>
                     <li>2</li>
                     <li>3</li>
                     <li>4</li>
                     <li>5</li>
                     <li>6</li>
-                    </ul>
-                  </p>
+                  </ul>
                 </div>
               </div>
             </div>
@@ -149,16 +150,17 @@ class What extends React.Component {
                 <div className="col-md-12 text-left">
                   <h2 className="section-heading">Submit a Story</h2>
                   <p>
-                    To submit a story, please adhere to the following guidelines:
-                    <ul>
+                    To submit a story, please adhere to the following
+                    guidelines:
+                  </p>
+                  <ul>
                     <li>1</li>
                     <li>2</li>
                     <li>3</li>
                     <li>4</li>
                     <li>5</li>
                     <li>6</li>
-                    </ul>
-                  </p>
+                  </ul>
                 </div>
               </div>
             </div>
