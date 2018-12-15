@@ -23,6 +23,7 @@ exports.createPages = ({ graphql, actions }) => {
                     frontmatter {
                       layout
                       path
+                      category
                     }
                   }
                 }
@@ -38,7 +39,7 @@ exports.createPages = ({ graphql, actions }) => {
 
         // Create blog posts & pages.
         const items = data.allFile.edges
-        const posts = items.filter(({ node }) => /posts/.test(node.name))
+        let posts = items.filter(({ node }) => /posts/.test(node.name))
         each(posts, ({ node }) => {
           if (!node.remark) return
           const { path } = node.remark.frontmatter
@@ -63,6 +64,9 @@ exports.createPages = ({ graphql, actions }) => {
         const postsPerPage = 2
         const numPages = Math.ceil(posts.length / postsPerPage)
 
+        //console.log(items.filter(node.remark))
+        //let posts = items.filter(({ node }) => 1)
+
         _.times(numPages, i => {
           createPage({
             path: i === 0 ? `/` : `/${i + 1}`,
@@ -76,6 +80,7 @@ exports.createPages = ({ graphql, actions }) => {
           })
         })
 
+        // Create Reviews page with reviews posts.
         _.times(numPages, i => {
           createPage({
             path: i === 0 ? `/reviews/` : `/reviews/${i + 1}`,
@@ -88,6 +93,8 @@ exports.createPages = ({ graphql, actions }) => {
             },
           })
         })
+
+        // Create Stories page with stories posts.
         _.times(numPages, i => {
           createPage({
             path: i === 0 ? `/stories/` : `/stories/${i + 1}`,
