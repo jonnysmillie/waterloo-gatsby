@@ -60,13 +60,38 @@ exports.createPages = ({ graphql, actions }) => {
         })
 
         // Create blog post list pages
-        const postsPerPage = 5
+        const postsPerPage = 2
         const numPages = Math.ceil(posts.length / postsPerPage)
 
         _.times(numPages, i => {
           createPage({
             path: i === 0 ? `/` : `/${i + 1}`,
             component: path.resolve('./src/templates/blog-list.js'),
+            context: {
+              limit: postsPerPage,
+              skip: i * postsPerPage,
+              numPages,
+              currentPage: i + 1,
+            },
+          })
+        })
+
+        _.times(numPages, i => {
+          createPage({
+            path: i === 0 ? `/reviews/` : `/reviews/${i + 1}`,
+            component: path.resolve('./src/templates/reviews-list.js'),
+            context: {
+              limit: postsPerPage,
+              skip: i * postsPerPage,
+              numPages,
+              currentPage: i + 1,
+            },
+          })
+        })
+        _.times(numPages, i => {
+          createPage({
+            path: i === 0 ? `/stories/` : `/stories/${i + 1}`,
+            component: path.resolve('./src/templates/stories-list.js'),
             context: {
               limit: postsPerPage,
               skip: i * postsPerPage,

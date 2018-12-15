@@ -11,7 +11,7 @@ import Img from 'gatsby-image'
 import map from 'lodash/map'
 import './style.scss'
 
-class BlogIndex extends React.Component {
+class Stories extends React.Component {
   render() {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
     const siteDescription = get(
@@ -28,7 +28,7 @@ class BlogIndex extends React.Component {
     return (
       <Layout location={location}>
         <Meta site={siteMetadata} />
-        <h1 className="text-center p-1 underhead">All posts</h1>
+        <h1 className="text-center p-1 underhead">Stories</h1>
         {posts.map(({ node }) => {
           const title = get(node, 'frontmatter.title') || node.frontmatter.title
           const path = get(node, 'frontmatter.path') || node.frontmatter.path
@@ -150,7 +150,7 @@ class BlogIndex extends React.Component {
             }}
           >
             {!isFirst && (
-              <Link to={prevPage} rel="prev">
+              <Link to={`/stories/${prevPage}`} rel="prev">
                 ← Previous Page
               </Link>
             )}
@@ -162,7 +162,7 @@ class BlogIndex extends React.Component {
                 }}
               >
                 <Link
-                  to={`/${i === 0 ? '' : i + 1}`}
+                  to={`/stories/${i === 0 ? '' : i + 1}`}
                   style={{
                     textDecoration: 'none',
                     color: i + 1 === currentPage ? '#ffffff' : '',
@@ -174,7 +174,7 @@ class BlogIndex extends React.Component {
               </li>
             ))}
             {!isLast && (
-              <Link to={nextPage} rel="next">
+              <Link to={`/stories/${nextPage}`} rel="next">
                 Next Page →
               </Link>
             )}
@@ -185,10 +185,10 @@ class BlogIndex extends React.Component {
   }
 }
 
-export default BlogIndex
+export default Stories
 
 export const pageQuery = graphql`
-  query blogPageQuery($skip: Int!, $limit: Int!) {
+  query storiesPageQuery($skip: Int!, $limit: Int!) {
     site {
       siteMetadata {
         title
@@ -201,6 +201,7 @@ export const pageQuery = graphql`
     }
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
+      filter: { frontmatter: { category: { eq: "Stories" } } }
       limit: $limit
       skip: $skip
     ) {
