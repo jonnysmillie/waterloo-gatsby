@@ -5,6 +5,8 @@ import get from 'lodash/get'
 import Post from 'templates/Post'
 import Meta from 'components/Meta'
 import Layout from 'components/Layout'
+import Header from 'components/Header'
+import Search from 'components/Search'
 
 const BlogIndex = ({ data, location }) => {
   const posts = get(data, 'remark.posts')
@@ -12,9 +14,8 @@ const BlogIndex = ({ data, location }) => {
     <Layout location={location}>
       <Meta site={get(data, 'site.meta')} />
       <h1 className="text-center p-1 underhead">All posts</h1>
-      <div className="container">
-      
-      </div>
+      <Header />
+      <div className="container" />
       {posts.map(({ post }, i) => (
         <Post
           data={post}
