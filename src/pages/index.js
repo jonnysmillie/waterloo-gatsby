@@ -13,9 +13,7 @@ const BlogIndex = ({ data, location }) => {
   return (
     <Layout location={location}>
       <Meta site={get(data, 'site.meta')} />
-      <h1 className="text-center p-1 underhead">All posts</h1>
       <Header />
-      <div className="container" />
       {posts.map(({ post }, i) => (
         <Post
           data={post}
