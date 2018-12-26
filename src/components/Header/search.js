@@ -27,7 +27,14 @@ export default class Search extends Component {
               onChange={this.search}
             />
           </h1>
-          <ul>
+          <ul className="search-results">
+            {this.state.query && !this.state.results[0] ? (
+              <h2 className="pb-3">
+                No results for "{this.state.query}" keep trying!
+              </h2>
+            ) : (
+              ''
+            )}
             {this.state.results[0] ? (
               <h2>Search results for "{this.state.query}"</h2>
             ) : (
