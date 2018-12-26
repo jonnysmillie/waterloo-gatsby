@@ -17,7 +17,7 @@ export default class Search extends Component {
     return (
       <div className="underhead">
         <div className="container">
-          <h1 className="text-left p-1 ">
+          <h1 className="text-left p-1">
             All posts
             <input
               className="search-input"
@@ -28,6 +28,11 @@ export default class Search extends Component {
             />
           </h1>
           <ul>
+            {this.state.results[0] ? (
+              <h2>Search results for "{this.state.query}"</h2>
+            ) : (
+              ''
+            )}
             {this.state.results.map(page => (
               <li key={page.id}>
                 <Link to={'/' + page.path}>{page.title}</Link>

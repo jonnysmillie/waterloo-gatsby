@@ -1,9 +1,14 @@
+.underhead h1 {
+	border-bottom:1px solid #4a5056;
+}
+
 .inline {
 	display: inline
 }
 .search-input {
 	font-size:1.8rem!important;
 	line-height: 1.25;
+	text-align: right;
 }
 
 .search-input {
